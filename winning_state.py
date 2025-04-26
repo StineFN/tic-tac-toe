@@ -4,7 +4,7 @@ def row_winner(board):
     for row in board:
         first = row[0]
         
-        #Compare elements of the row and check if it's a space
+        # Compare elements of the row and check if it's a space
         for x in row:
             if x.isspace():
                 win = False
@@ -23,7 +23,7 @@ def row_winner(board):
 
 def column_winner(board):
     
-    #Go through all of the rows
+    # Go through all of the rows
     for col in range(len(board)-1):
         first = board[0][col]
         
@@ -51,8 +51,9 @@ def diagonal_winner(board):
     if top_L.isspace() or top_R.isspace():
         return False
     
-    #Check top left to bottom right
-    for row in range(1, size-1):
+    # Check top left to bottom right
+    # Range starts from 1 due to first row being the check value (top_L and  top_R)
+    for row in range(1, size): 
         if top_L != board[row][row]:
             win = False
             break
@@ -63,8 +64,8 @@ def diagonal_winner(board):
     if win == True:
         return win   
         
-    #Check top right to bottom left
-    for row in range(1, size-1):
+    # Check top right to bottom left
+    for row in range(1, size):
         if top_R != board[row][size-1-row]:
             win = False
             break
