@@ -6,7 +6,7 @@ def format_board(board):
     for i in range(len(board)):
         cols += str(i+1) + " "
         board[i].insert(0,str(i+1) + " ")
-    joined_rows.append(cols)  
+    joined_rows.append(cols.rstrip())
     
     for row in board:
         joined_rows.append("|".join(row))
