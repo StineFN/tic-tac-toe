@@ -1,4 +1,5 @@
 from format_board import format_board
+from play_game import play_game
 
 
 testboard = [
@@ -7,4 +8,6 @@ testboard = [
         ['O', ' ', 'O']
 ]
 
-print(repr(format_board(testboard)))
+#print(repr(format_board(testboard)))
+
+play_game(3, 'A', 'B')
