@@ -15,6 +15,7 @@ def print_winner(player):
 
 def print_draw():
     print("It's a draw!")
+    
 def play_move(board, player):
     print(f'{player} to play:')
     row = int(input()) - 1
