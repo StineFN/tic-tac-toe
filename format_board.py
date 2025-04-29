@@ -1,3 +1,4 @@
+
 def format_board(board):
     size = len(board)
     first_row = '  '
@@ -12,7 +13,7 @@ def format_board(board):
     for i in range(size):
         first_row += str(i + 1) + ' '
 
-    joined_rows = [first_row]
+    joined_rows = [first_row.rstrip()]
 
     for i in range(size):
         joined_row = str(i + 1) + ' ' + '|'.join(board[i])
