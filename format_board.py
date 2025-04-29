@@ -1,3 +1,4 @@
+"""
 def format_board(board):
     joined_rows = []
     divider = "\n   -"
@@ -29,7 +30,7 @@ def format_board(board):
         joined_row = str(i + 1) + ''.join(board[i])
         joined_rows.append(joined_row)
     return "\n".join(joined_rows)
-"""
+
 
 """def format_board(board):
     size = len(board)
