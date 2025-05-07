@@ -1,21 +1,9 @@
-from play_game import make_board
-from play_game import print_winner
-from play_game import print_draw
-from play_game import play_move
+from play_game import print_winner, print_draw, get_placement
+
 
 player1 = 'S'
-board = make_board(3)
-
-def test_make_board():
-    assert board == [
+board = [
         [' ', ' ', ' '],
-        [' ', ' ', ' '],
-        [' ', ' ', ' '],
-    ]
-
-    board[0][0] = 'X'
-    assert board == [
-        ['X', ' ', ' '],
         [' ', ' ', ' '],
         [' ', ' ', ' '],
     ]
@@ -32,6 +20,16 @@ def test_print_draw(capsys):
     captured = capsys.readouterr()
     result = captured.out 
     assert result.strip() == "It's a draw!"
+
+
+"""def test_get_placement(monkeypatch):
+    inputs = iter([1, 2])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    row, col = get_placement()
+    
+    assert row == 0
+    assert col == 1
+"""
 """
 def test_play_move(monkeypatch):
     board = make_board(3)

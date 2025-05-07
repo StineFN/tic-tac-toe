@@ -1,25 +1,21 @@
-from format_board import format_board
+from format_board import format_board, make_board
 from winning_state import winner
-
-def make_board(size):
-    board = []
-    for _ in range(size):
-        row = []
-        for _ in range(size):
-            row.append(' ')
-        board.append(row)
-    return board
 
 def print_winner(player):
     print(f'{player} wins!')
 
 def print_draw():
     print("It's a draw!")
-    
-def play_move(board, player):
+
+#Function for getting input on user's move. Returns a tuple as this will never have to be altered. 
+def get_placement():
     print(f'{player} to play:')
     row = int(input()) - 1
     col = int(input()) - 1
+    return row, col
+
+def play_move(board, player):
+    row, col = get_placement()
     board[row][col] = player
     print(format_board(board))
 
