@@ -1,4 +1,13 @@
 
+def make_board(size):
+    board = []
+    for _ in range(size):
+        row = []
+        for _ in range(size):
+            row.append(' ')
+        board.append(row)
+    return board
+
 def format_board(board):
     size = len(board)
     first_row = '  '

@@ -1,4 +1,20 @@
-from format_board import format_board
+from format_board import format_board, make_board
+
+board = make_board(3)
+
+def test_make_board():
+    assert board == [
+        [' ', ' ', ' '],
+        [' ', ' ', ' '],
+        [' ', ' ', ' '],
+    ]
+
+    board[0][0] = 'X'
+    assert board == [
+        ['X', ' ', ' '],
+        [' ', ' ', ' '],
+        [' ', ' ', ' '],
+    ]
 
 def test_format_board():
     board = [
